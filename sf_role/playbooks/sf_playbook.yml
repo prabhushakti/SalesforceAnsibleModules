@@ -1,0 +1,18 @@
+---
+- name: Send a custom payload to cloudWerkstatt
+  hosts: localhost
+  gather_facts: false
+  vars:
+    api_url: https://cloudwerkstatt.com
+    api_port: 443
+    user: "myuser"
+    password: "" # You really would want to use Ansible Vault here!
+    phone_number: "123456789"
+  tasks:
+  - name: Update phone number in my favorite website
+    sf_module:
+      url: "{{ api_url }}"
+      port: "{{ api_port }}"
+      user: "{{ user }}"
+      password: "{{ password }}"
+      number: "{{ phone_number }}"

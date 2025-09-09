@@ -1,0 +1,16 @@
+---
+- name: Login to Salesforce
+  hosts: localhost
+  tasks:
+    - name: Salesforce login
+      sf_login:
+        client_id: "3MVG9rZjd7MXFdLhg3Su9yqqVTMdC6SEgSb1ZtnAne0vJOcsQBLqHRTJJdo01mog_l7_v4k2_jqetRM.icpPa"
+        client_secret: "AF5E9BBBDB8065305DAA3A490057565D9F4C38F9F633CFD86DCDF1C164C94176"
+        username: "prabhu@mindful-panda-t7uzdm.com"
+        password: "96589931P@"
+        security_token: "your_security_token"
+      register: salesforce_response
+
+    - debug:
+        var: salesforce_response
+

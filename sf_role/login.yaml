@@ -1,0 +1,13 @@
+---
+- name: Login to Salesforce
+  hosts: localhost
+  become: no
+  gather_facts: no
+  tasks:
+    - name: Login using JWT/OAuth
+      shell: |
+       sf org login jwt --username  prabhu694@agentforce.com  --client-id 3MVG9rZjd7MXFdLhg3Su9yqqVTMdC6SEgSb1ZtnAne0vJOcsQBLqHRTJJdo01mog_l7_v4k2_jqetRM.icpPa --jwt-key-file  salesforce.key -r https://login.salesforce.com -a Prod -s
+      register: jwt_login
+    - debug:
+        var: jwt_login.stdout_lines
+ 

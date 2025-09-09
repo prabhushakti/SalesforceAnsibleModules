@@ -1,0 +1,9 @@
+
+# Ignore Python cache files
+myenv/
+__pycache__/
+*.py[cod]
+
+# Ignore MXLinux Files
+*desktop
+

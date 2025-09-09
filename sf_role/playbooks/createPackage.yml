@@ -1,0 +1,53 @@
+---
+- name: Create Package 
+  hosts: localhost
+  become: no
+  gather_facts: no
+  vars:
+      name: "unnamedPackage"
+      packageType: "Unlocked"
+      packagePath: "../force-app/"
+      description:
+      target_dev_hub: "unspecified"
+      api_version: 64
+      namespace: "None" # setting None disabled namespace
+      isOrgDependent: no 
+      emailActiveDevHubUserOnErrors: no  
+
+  tasks:
+    - include_tasks: tasks/createProject.yml
+      tags: createProject
+
+    - include_tasks: tasks/createScratchORG.yml
+      tags: createScratchOrg
+
+    - include_tasks: tasks/renamePackage.yml
+      tags: renamePackage
+
+
+    - include_tasks: tasks/createPackage.yml
+      tags: createPackage
+    
+    - include_tasks: tasks/loginSF.yml
+      tags: login
+    -  
+    ...
+    - name: Verify Connected ORGs 
+      shell: |
+        sf org list --json > tmp/delete.json
+        jq '.results.connected' # iterates over json file for all connected 
+        rm -rf tmp/delete.json
+       
+    - name: 
+    - name: Salesforce login
+      sf_login:
+        client_id: "3MVG9rZjd7MXFdLhg3Su9yqqVTMdC6SEgSb1ZtnAne0vJOcsQBLqHRTJJdo01mog_l7_v4k2_jqetRM.icpPa"
+        client_secret: "AF5E9BBBDB8065305DAA3A490057565D9F4C38F9F633CFD86DCDF1C164C94176"
+        username: "prabhu@mindful-panda-t7uzdm.com"
+        password: "96589931P@"
+        security_token: "your_security_token"
+      register: salesforce_response
+
+    - debug:
+        var: salesforce_response
+

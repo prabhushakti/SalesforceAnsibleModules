@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Test My Custom Module
+      my_custom_module:
+        argument_name: "Value"
