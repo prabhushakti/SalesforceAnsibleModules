@@ -1,5 +1,5 @@
 # Disclosure
-This is an unofficial Salesforce repository containing collections of modules and roles to enforce declaraitive way of developing software in the platform.
+This is an unofficial Salesforce repository containing collections of modules and roles to enforce declaraitive way of developing in the platform.
 This collection is not affiliated with or endorsed by Salesforce (a registered trademark of Salesforce, Inc).
 
 # About
@@ -14,8 +14,11 @@ This is repository contains Ansible Modules and a Role for package based develop
 - You can install this as a collection ```$ ansible-galaxy collection install salesforcedx```
 - You can also manually download the releases, uncompress in /usr/share/ansible/collections/ directory.
 ### Quick Start
-- Populate development requirements in ```vars/``` directory, i.e. name of project, package you're building, version etc.
-- Create/Recreate the development enviornment, scratch org, package, deploy, test in one command: ``` ansible feature_WI123X.yml --tags "createProject, createScratchORG, createPackage, deployPackage"``` 
+- Populate development requirements in ```vars/main.yml``` file, i.e. name of project, package you're building, version etc.
+- Create/Recreate the development enviornment, scratch org, package, deploy, test in one command: 
+``` $ ansible feature_WI123X.yml --tags "createProject, createScratchORG, createPackage, deployPackage"``` 
+- Create a scratch org imperatively: 
+``` $ ansible feature_WI123X.yml --tags createScratchORG -e  "orgName: testWI007"```
 
 ## License Information
 https://www.mozilla.org/en-US/MPL/2.0/
