@@ -1,9 +1,22 @@
+# Disclosure
+This is an unofficial Salesforce repository containing collections of modules and roles to enforce declaraitive way of developing software in the platform.
+This collection is not affiliated with or endorsed by Salesforce (a registered trademark of Salesforce, Inc).
+
 # About
-_This is repository contains Ansible Modules and a Role for package based development. This is extremely helpful for local developments. Instead of using SFDX, SF commands and wasting time copy-pasting, going back-and-forth between windows, you have a self-documenting file-based approach to create packages and it's dependencies. You don't need to search or learn any commands or tools. Just fill what you need and it gets things done._
+This is repository contains Ansible Modules and a Role for package based development. This is extremely helpful for local developments. Instead of using SFDX/SF commands/IDE-plugins: wasting time copy-pasting, reading command documentations, going back-and-forth between windows, you have a self-documenting configuration file to create packages. You don't need to search or learn any commands or tools. Just fill what you need and it gets things done.
 
 ## System requirements:
--   Requires Python 
+-   Requires Python 3+ 
 -   Requires python ansible package
+
+## Get Started:
+### Installation
+- You can install this as a collection ```$ ansible-galaxy collection install salesforcedx```
+- You can also manually download the releases, uncompress in /usr/share/ansible/collections/ directory.
+### Quick Start
+- Populate development requirements in ```vars/``` directory, i.e. name of project, package you're building, version etc.
+- Create/Recreate the development enviornment, scratch org, package, deploy, test in one command: ``` ansible feature_WI123X.yml --tags "createProject, createScratchORG, createPackage, deployPackage"``` 
 
 ## License Information
 https://www.mozilla.org/en-US/MPL/2.0/
+
