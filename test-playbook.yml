@@ -2,6 +2,7 @@
 - hosts: localhost
   become: no
   gather_facts: no
+  ignore_errors: yes
   #vars_files: 
   #  - sf_role/vars/createPackage.yml # use it for custom vars files, only vars/main.yml is automatically imported
   roles:
@@ -14,7 +15,7 @@
     - debug:  
         msg: "Example variable import: {{ packageType }}"
 
-    - name: Execute Sample Task
-      ansible.builtin.include_tasks:
-        createPackage.yml
+#    - name: Execute Sample Task
+#      ansible.builtin.include_tasks:
+#        createPackage.yml
 

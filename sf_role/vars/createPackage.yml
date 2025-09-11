@@ -4,6 +4,6 @@ packagePath: "../force-app/"
 description:
 target_dev_hub: "unspecified"
 api_version: 64
-namespace: "None" # setting None disabled namespace
+packageNamespace: "None" # setting None disabled namespace
 isOrgDependent: no 
 emailActiveDevHubUserOnErrors: no  

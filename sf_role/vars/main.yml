@@ -1,11 +1,14 @@
 ---
-# vars file for sf_role
-name: "unnamedPackage"
-packageType: "Unlocked"
+# variables for creating package
+packageName: "unnamedPackage"
+packageType: "Unlocked" # 
 packagePath: "../force-app/"
 description:
-target_dev_hub: "unspecified"
+targetDevHub: "unspecified"
 api_version: 64
-namespace: "None" # setting None disabled namespace
+noNamespace: yes # setting  disabled namespace
 isOrgDependent: no 
 emailActiveDevHubUserOnErrors: no  
+jsonOutput: yes
+
+# variables for creating project

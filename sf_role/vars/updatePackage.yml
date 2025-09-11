@@ -1,5 +1,6 @@
 ---
-name: "unnamedPackage"
+# variables for creating pacakge
+packageName: "unnamedPackage"
 packageType: "Unlocked"
 packagePath: "../force-app/"
 description:

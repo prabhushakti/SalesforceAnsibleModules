@@ -1,2 +1,17 @@
 ---
-# tasks file for sf_role
+- import_tasks: tasks/createProject.yml
+  tags: createProject
+
+- import_tasks: tasks/createScratchORG.yml
+  tags: createScratchOrg
+
+- import_tasks: tasks/renamePackage.yml
+  tags: renamePackage
+
+- import_tasks: tasks/createPackage.yml
+  tags: createPackage
+
+- import_tasks: tasks/loginSF.yml
+  tags: login
+
+- include_vars: createPackage.yml

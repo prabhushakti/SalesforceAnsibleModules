@@ -12,9 +12,19 @@
     msg: "The specified path does not exist: {{ path_to_check }}"
     when: not path_check.stat.exists  # Fail if the path does not exist
 
-- name: Path Test Sucess
+- name: Path Test Sucessful
   debug:
     msg: "The path exists: {{ path_to_check }}"
     when: path_check.stat.exists  # Only display if the path exists
 
+- name: Creating Package
+  set_fact:
+    build_command: "sf package create --name MyUnlockedPackage --package-type Unlocked --path force-app"
 
+- name: Creating Package
+  shell: |
+    var="{{ build_command}}"
+    $var
+  register: sf_out
+
+- debug: var=sf_out
