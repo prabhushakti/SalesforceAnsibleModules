@@ -12,5 +12,9 @@
       debug: msg="testing"
 
     - debug:  
-        msg: "Example variable import: {{ packageType }} "
+        msg: "Example variable import: {{ packageType }}"
+
+    - name: Execute Sample Task
+      ansible.builtin.include_tasks:
+        createPackage.yml
 
