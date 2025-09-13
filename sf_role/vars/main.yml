@@ -13,7 +13,7 @@ packageName: "unnamedPackage"
 packageType: "Unlocked" # 
 packagePath: "../force-app/"
 description: "example package from Salesforce"
-targetDevHub: "unspecified"
+targetDevHub: "wi-test-app"
 api_version: 64
 noNamespace: yes # setting  disabled namespace
 isOrgDependent: no 
