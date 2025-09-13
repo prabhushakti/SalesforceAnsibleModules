@@ -1,0 +1,51 @@
+- name: Gathering Package Data
+  include_vars:
+    file: vars/createPackage.yml
+
+- name: Verify Package Path
+  stat:
+    path: "{{ packagePath }}"
+  register: verifyPath
+
+- name: Fail if the path does not exist
+  fail:
+    msg: "The specified path does not exist: {{ path_to_check }}"
+    when: not path_check.stat.exists  # Fail if the path does not exist
+
+- name: Path Test Sucessful
+  debug:
+    msg: "The path exists: {{ path_to_check }}"
+    when: path_check.stat.exists  # Only display if the path exists
+
+- name: Gathering Unlocked Package Data
+  set_fact:
+    build_command: "sf package create --name {{ packageName }} --package-type {{ packageType }} --path {{ packagePath }} -v {{ targetDevHub_}} --api-version {{ api_version }} "
+  when: packageType is "Unlocked"
+
+- name: Create Package with No Namespace
+  set_fact:
+    build_command: "{{ buildCommand + " -e "}} "
+  when: noNamespace==true
+
+- name: Define Org Dependency
+  set_fact:
+    build_command: "{{ buildCommand + " -e "}} "
+  when: isOrgDependent==true
+
+- name: Define Output Type in JSON
+  set_fact: 
+    build_command: "{{ buildCommand + " --json"}}"
+  when: jsonOutput is true
+
+- name: Gathering Package Data
+  set_fact:
+    build_command: "sf package create --name {{ packageName }} --package-type {{ packageType }} --path {{ packagePath }} -v {{ targetDevHub_}} --api-version {{ api_version }} "
+    when: packageType != "Unlocked"
+
+- name: Creating Package
+  shell: |
+    var="{{ build_command}}"
+    $var
+  register: sf_out
+
+- debug: var=sf_out

@@ -14,4 +14,7 @@
 - import_tasks: tasks/loginSF.yml
   tags: login
 
+# Segregating variables would cause more lines to be added
 - include_vars: createPackage.yml
+# While this can work but we can add variables into the default vars/main file and comments on top to explain
+# That would also ensure a single file to define config

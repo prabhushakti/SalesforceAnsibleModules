@@ -1,9 +1,18 @@
 ---
-# variables for creating package
+# Variables for
+
+# creating project
+projectName: "unnamed"
+projectTemplate:
+projectOutputDir: test-app
+projectNamespace: 
+projectManifest:
+
+# creating package
 packageName: "unnamedPackage"
 packageType: "Unlocked" # 
 packagePath: "../force-app/"
-description:
+description: "example package from Salesforce"
 targetDevHub: "unspecified"
 api_version: 64
 noNamespace: yes # setting  disabled namespace
@@ -11,4 +20,19 @@ isOrgDependent: no
 emailActiveDevHubUserOnErrors: no  
 jsonOutput: yes
 
-# variables for creating project
+# packge version create
+versionTragetOrg: Dev
+versionBranch:
+versionDefinitionFile:
+versionInstallationKey:
+versionPackage:
+versionTag: 
+versionName:
+versionNumber:
+versionDescription:
+versionLanguage:
+versionShowOutput: yes
+
+# installing package
+packageInstallTargetOrg: DevSandbox
+packageInstallFlagsDirs: 

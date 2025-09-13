@@ -13,7 +13,7 @@ __pycache__/
 # Test Files
 temp/
 tmp/
-test/
+tests/
 *test*
 
 
