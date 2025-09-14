@@ -1,3 +1,6 @@
+# Salesforce Configuration Management with Ansible!!!
+![Demo Gif Video](https://github.com/prabhushakti/SalesforceAnsibleModules/blob/dev/assets/demo.gif)
+
 # Disclosure
 This is an unofficial Salesforce repository containing collections of modules and roles to enforce declaraitive way of developing in the platform.
 This collection is not affiliated with or endorsed by Salesforce (a registered trademark of Salesforce, Inc).
