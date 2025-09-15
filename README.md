@@ -13,6 +13,7 @@ This is repository contains Ansible Modules and a Role for package based develop
 -   Requires python ansible package
 
 ## Get Started:
+_Please wait for the release. It's under development._
 ### Installation
 - You can install this as a collection ```$ ansible-galaxy collection install salesforcedx```
 - You can also manually download the releases, uncompress in /usr/share/ansible/collections/ directory.
