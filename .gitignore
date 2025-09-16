@@ -16,4 +16,6 @@ tmp/
 tests/
 *test*
 
+# Configuration Files
+*cfg
 
