@@ -1,0 +1,15 @@
+# Ansible core
+ansible==2.12.0
+
+# Ansible collections (if needed)
+ansible-collection-ansible.builtin
+ansible-collection-community.general
+
+# YAML parser
+PyYAML==6.0
+
+# For testing
+pytest==7.1.0
+pytest-ansible==1.2.0   # Testing Ansible playbooks with pytest
+
+# Optional: any extra packages specific to your use case
