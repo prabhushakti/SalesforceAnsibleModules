@@ -5,6 +5,7 @@ name: CI
   push:
     branches:
       - main
+      - dev
 
 jobs:
   scripts:
@@ -19,7 +20,7 @@ jobs:
 
       - name: Install test dependencies.
         run: pip3 install ansible molecule molecule-plugins[docker] yamllint ansible-lint
-        
+
       - name: Make molecule test shim executable and Run
         run: |
           chmod +x tests/molecule.sh

@@ -4,7 +4,8 @@ name: Molecule CI
   pull_request:
   push:
     branches:
-      - master
+      - main
+      - dev
 
 jobs:
 
@@ -14,8 +15,8 @@ jobs:
     strategy:
       matrix:
         distro:
-          - rockylinux9
-          - debian12
+          - freebsd
+          - rockylinux
 
     steps:
       - name: Check out the codebase.

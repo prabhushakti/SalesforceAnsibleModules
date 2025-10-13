@@ -1,5 +1,9 @@
 name: Static Code Analysis
-on: [pull_request]
+on: 
+  push:
+    branches:
+      - main
+      - dev
 jobs:
   check-syntax:
     #runs-on: [freebsd, linux, x86]
