@@ -1,6 +1,6 @@
-![Build Status - Static Analysis](https://github.com/yourusername/yourrepo/actions/workflows/static-analysis.yml/badge.svg?branch=dev)
-![Build Status - Unit Test](https://github.com/yourusername/yourrepo/actions/workflows/molecule-test.yml/badge.svg?branch=dev)
-![Build Status - CI](https://github.com/yourusername/yourrepo/actions/workflows/CI.yml/badge.svg?branch=dev)
+![Build Status - Static Analysis](https://github.com/prabhushakti/SalesforceAnsibleModules/actions/workflows/static-analysis.yml/badge.svg?branch=dev)
+![Build Status - Unit Test](https://github.com/prabhushakti/SalesforceAnsibleModules/actions/workflows/molecule-test.yml/badge.svg?branch=dev)
+![Build Status - CI](https://github.com/prabhushakti/SalesforceAnsibleModules/actions/workflows/CI.yml/badge.svg?branch=dev)
 
 # Salesforce Configuration Management with Ansible!!!
 ![Demo Gif Video](https://github.com/prabhushakti/SalesforceAnsibleModules/blob/dev/assets/demo.gif)
