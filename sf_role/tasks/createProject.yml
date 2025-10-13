@@ -1,6 +1,6 @@
 - name: Creating SF Project Directory
   include_vars:
-    file: vars/createPackage.yml
+    file: vars/createProject.yml
 
 - name: Verify Package Path
   stat:

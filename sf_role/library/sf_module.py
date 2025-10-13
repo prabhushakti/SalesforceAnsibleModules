@@ -1,3 +1,74 @@
+# Copyright: (c) 2025, Prabhushakti H. <prabhu@duck.com>
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+from __future__ import (absolute_import, division, print_function)
+__metaclass__ = type
+
+DOCUMENTATION = r'''
+---
+module: sf_login
+
+short_description: Logins into org
+version_added: "1.0.0"
+
+description: sf_login can authenticate with specified salesforce org.
+
+options:
+    client_id:
+        description: client id.
+        required: for jwt 
+        type: str
+    client_secret:
+        description: It is recommeded to use base64 encoded
+        required: false
+        type: str
+    username:
+        description: Salesforce user name.
+            - Required if you're not using jwt based authentication.
+            - enter your username
+        required: false
+        type: str
+# Specify this value according to your collection
+# in format of namespace.collection.doc_fragment_name
+# extends_documentation_fragment:
+#     - my_namespace.my_collection.my_doc_fragment_name
+
+author:
+    - Prabhushakti H.(@prabhushakti)
+'''
+
+EXAMPLES = r'''
+# JWT Login
+- name: Login using json web token
+  sf_login:
+    client_id: XXXX
+    client_key: file.crt
+
+# pass in a message and have changed true
+- name: Test with a message and changed output
+  my_namespace.my_collection.my_test:
+    name: hello world
+    new: true
+
+# fail the module
+- name: Test failure of the module
+  my_namespace.my_collection.my_test:
+    name: fail me
+'''
+
+RETURN = r'''
+# These are examples of possible return values, and in general should use other names for return values.
+original_message:
+    description: The original name param that was passed in.
+    type: str
+    returned: if defined
+    sample: 'failed'
+message:
+    description: The output message that the test module generates.
+    type: json
+    returned: always
+    sample: '{ success }'
+'''
+
 #!/usr/bin/env python3
 
 from ansible.module_utils.basic import AnsibleModule

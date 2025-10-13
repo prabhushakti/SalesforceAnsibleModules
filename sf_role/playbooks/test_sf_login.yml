@@ -1,5 +1,6 @@
 ---
 - name: Login to Salesforce
+  gather_facts: false
   hosts: localhost
   tasks:
     - name: Salesforce login

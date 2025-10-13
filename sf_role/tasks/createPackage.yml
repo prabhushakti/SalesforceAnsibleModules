@@ -17,9 +17,30 @@
     msg: "The path exists: {{ path_to_check }}"
     when: path_check.stat.exists  # Only display if the path exists
 
-- name: Creating Package
+- name: Gathering Unlocked Package Data
   set_fact:
-    build_command: "sf package create --name MyUnlockedPackage --package-type Unlocked --path force-app"
+    build_command: "sf package create --name {{ packageName }} --package-type {{ packageType }} --path {{ packagePath }} -v {{ targetDevHub_}} --api-version {{ api_version }} "
+  when: packageType is "Unlocked"
+
+- name: Create Package with No Namespace
+  set_fact:
+    build_command: "{{ buildCommand + " -e "}} "
+  when: noNamespace==true
+
+- name: Define Org Dependency
+  set_fact:
+    build_command: "{{ buildCommand + " -e "}} "
+  when: isOrgDependent==true
+
+- name: Define Output Type in JSON
+  set_fact: 
+    build_command: "{{ buildCommand + " --json"}}"
+  when: jsonOutput is true
+
+- name: Gathering Package Data
+  set_fact:
+    build_command: "sf package create --name {{ packageName }} --package-type {{ packageType }} --path {{ packagePath }} -v {{ targetDevHub_}} --api-version {{ api_version }} "
+    when: packageType != "Unlocked"
 
 - name: Creating Package
   shell: |
