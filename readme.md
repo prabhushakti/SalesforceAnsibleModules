@@ -1,6 +1,7 @@
 ![Build Status - Static Analysis](https://github.com/prabhushakti/SalesforceAnsibleModules/actions/workflows/static-analysis.yml/badge.svg?branch=dev)
 ![Build Status - Unit Test](https://github.com/prabhushakti/SalesforceAnsibleModules/actions/workflows/molecule-ci.yml/badge.svg?branch=dev)
 ![Build Status - CI](https://github.com/prabhushakti/SalesforceAnsibleModules/actions/workflows/CI.yml/badge.svg?branch=dev)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 # Salesforce Configuration Management with Ansible!!!
 ![Demo Gif Video](https://github.com/prabhushakti/SalesforceAnsibleModules/blob/dev/assets/demo.gif)
